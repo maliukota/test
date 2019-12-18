@@ -11,24 +11,23 @@ public class ReplenishmentPage {
     private SelenideElement fromCard = $("[data-test-id=from] input");
     private SelenideElement transferButton = $("[data-test-id=action-transfer]");
 
-    public DashboardPage transferAmountFromSecondCard (DataHelper.transferAmount transferAmount,
-                                                       DataHelper.SecondCardInfo secondCardInfo){
-        amount.setValue(String.valueOf(transferAmount.getTransferAmount()));
+    public DashboardPage transferAmountFromSecondCard(int transferAmount, DataHelper.SecondCardInfo secondCardInfo) {
+        amount.setValue(String.valueOf(transferAmount));
         fromCard.setValue(secondCardInfo.getSecondCardNumber());
         transferButton.click();
         return new DashboardPage();
     }
-    public DashboardPage transferAmountFromFirstCard (DataHelper.AmountOfMoney5000 amountOfMoney,
-                                                       DataHelper.FirstCardInfo firstCardInfo){
-        amount.setValue(amountOfMoney.getAmountOfMoney5000());
+
+    public DashboardPage transferAmountFromFirstCard(int amountOfMoney, DataHelper.FirstCardInfo firstCardInfo) {
+        amount.setValue(String.valueOf(amountOfMoney));
         fromCard.setValue(firstCardInfo.getFirstCardNumber());
         transferButton.click();
         return new DashboardPage();
     }
 
-    public void cleanFields (){
-        amount.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-        fromCard.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+    public void cleanFields() {
+        amount.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+        fromCard.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
     }
 
 
