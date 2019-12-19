@@ -42,20 +42,4 @@ public class DataHelper {
     public static SecondCardInfo getSecondCardInfo(){
         return new SecondCardInfo("5559000000000002", "**** **** **** 0002");
     }
-
-    @Value
-    public static class transferAmount{
-        private int transferAmount;
-    }
-    public static int getTransferAmount (int transferAmount){
-        return transferAmount;
-    }
-
-    @Value
-    public static class AmountOfMoney5000{
-        private String amountOfMoney5000;
-    }
-    public static AmountOfMoney5000 getAmountOfMoney5000(){
-        return new AmountOfMoney5000("5000");
-    }
 }
